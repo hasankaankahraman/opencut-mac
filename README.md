@@ -1,3 +1,16 @@
+# OpenCut for Mac
+
+A local, offline-first Mac app built from [OpenCut Classic](https://github.com/OpenCut-app/opencut-classic), the original open-source OpenCut video editor.
+
+- **Runs entirely on your Mac.** The editor's server listens only on `127.0.0.1`, projects and media stay in local storage, and the embedded analytics script is blocked.
+- **Fixes the archived snapshot.** Upstream was archived mid-refactor and no longer built; this repo restores the build plus keyboard shortcuts, stickers and migration of older projects.
+- **Download:** see [Releases](../../releases). The app is ad-hoc signed, so on first launch right-click → Open.
+- **Build it yourself:** see [mac/README.md](mac/README.md).
+
+OpenCut is MIT-licensed; all credit for the editor goes to the [OpenCut contributors](https://github.com/OpenCut-app/opencut-classic/graphs/contributors). The active rewrite lives at [OpenCut-app/OpenCut](https://github.com/OpenCut-app/OpenCut).
+
+---
+
 # OpenCut (Legacy)
 
 This is the original OpenCut codebase. It's archived and no longer maintained.
