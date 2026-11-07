@@ -1,0 +1,20 @@
+{
+  "name": "opencut-mac",
+  "productName": "OpenCut",
+  "version": "0.1.0",
+  "description": "OpenCut Classic as a local Mac app",
+  "private": true,
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "prepare-server": "./scripts/prepare-server.sh",
+    "icon": "./scripts/make-icon.sh",
+    "start": "electron .",
+    "dist": "electron-builder --mac dmg --arm64"
+  },
+  "trustedDependencies": ["electron"],
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  }
+}

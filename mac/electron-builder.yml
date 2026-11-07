@@ -1,0 +1,30 @@
+appId: app.opencut.classic.local
+productName: OpenCut
+copyright: OpenCut contributors (MIT)
+directories:
+  output: dist
+  buildResources: build
+# The shell has no runtime dependencies. Without these, electron-builder sees
+# the bun workspace root and bundles its node_modules into app.asar.
+files:
+  - main.js
+  - package.json
+  - "!**/node_modules/**"
+npmRebuild: false
+# The Next standalone server is copied in by after-pack.js: electron-builder
+# drops its top-level node_modules and bun's relative symlinks otherwise.
+afterPack: ./scripts/after-pack.js
+mac:
+  category: public.app-category.video
+  icon: build/icon.icns
+  target:
+    - target: dmg
+      arch: [arm64]
+  # Ad-hoc signature: no Apple Developer account needed, runs on this Mac.
+  identity: "-"
+  hardenedRuntime: false
+  gatekeeperAssess: false
+  notarize: false
+dmg:
+  title: OpenCut
+  artifactName: OpenCut-${version}-${arch}.dmg
