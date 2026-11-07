@@ -208,3 +208,13 @@ export function getDefaultShortcuts(): Map<
 
 	return shortcuts;
 }
+
+const ACTIONS_WITH_REQUIRED_ARGS: ReadonlySet<string> = new Set<
+	Exclude<TAction, TActionWithOptionalArgs>
+>(["remove-media-asset", "remove-media-assets"]);
+
+export function isActionWithOptionalArgs(
+	value: string,
+): value is TActionWithOptionalArgs {
+	return Object.hasOwn(ACTIONS, value) && !ACTIONS_WITH_REQUIRED_ARGS.has(value);
+}
